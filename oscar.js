@@ -986,8 +986,8 @@ OscarConnection.prototype._SSIModify = function(items, action, cb) {
       } else if (items[i].type === 0x01) {
         if (action === 2) {
           var ids = [],
-              children = (Object.keys(items[i].group > 0 ?
-                          this.contacts.list[items[i].group].contacts : this.contacts._usedIDs),len2 = children.length);
+              children = Object.keys(items[i].group > 0 ?
+                          this.contacts.list[items[i].group].contacts : this.contacts._usedIDs),len2 = children.length;
           for (var j=0; j<len2; j++) {
             if (items[i].group === 0 && children[j] === 0)
               continue;
